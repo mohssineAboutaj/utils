@@ -1,0 +1,21 @@
+{
+  "name": "@mohssineAboutaj/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+		"test": "node node_modules/jest/bin/jest.js test/",
+		"docs": "node node_modules/jsdoc/jsdoc.js -c jsdoc.config.js"
+  },
+  "keywords": [
+    "utils",
+    "helpers"
+  ],
+  "author": "Mohssine Aboutaj",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "jsdoc": "^3.6.3"
+  }
+}
