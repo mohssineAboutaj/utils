@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: remove-deplicates.js</title>
+    <title>JSDoc: Source: merge.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: remove-deplicates.js</h1>
+    <h1 class="page-title">Source: merge.js</h1>
 
     
 
@@ -27,23 +27,21 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @function removeDuplicated 
- * @description A simple function to remove duplicated elements between two arrays
+ * @function merge a function to merge a groups of values in one array
  * 
- * @param {Array} array The original array
- * @param {Array} toRemove the Array of elements to remove
+ * @param  {...any} args any data type to merge in one array
  * 
- * @returns New Array without duplicates element
+ * @returns Array of merged elements
  */
-function removeDuplicated(array, toRemove) {
-	let newArray;
-	toRemove.forEach((subEl) => {
-		array = array.filter(el => el !== subEl)
-	})
-	return newArray = array
+function merge(...args) {
+	let result = []
+	for (el of args) {
+		result = result.concat(el)
+	}
+	return result
 }
 
-module.exports = removeDuplicated</code></pre>
+module.exports = merge</code></pre>
         </article>
     </section>
 

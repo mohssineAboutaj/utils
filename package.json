@@ -1,11 +1,12 @@
 {
-  "name": "@mohssineAboutaj/utils",
+  "name": "@mohssineaboutaj/utils",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-		"test": "node node_modules/jest/bin/jest.js test/",
-		"docs": "node node_modules/jsdoc/jsdoc.js -c jsdoc.config.js"
+    "test": "node node_modules/jest/bin/jest.js test/",
+    "docs": "node node_modules/jsdoc/jsdoc.js -c jsdoc.config.js",
+    "deploy": "node node_modules/gh-pages/bin/gh-pages.js -d docs"
   },
   "keywords": [
     "utils",
@@ -15,7 +16,19 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "jest": "^25.1.0",
     "jsdoc": "^3.6.3"
-  }
+  },
+  "homepage": "https://mohssineaboutaj.github.io/utils/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohssineAboutaj/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mohssineAboutaj/utils/issues"
+  },
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	}
 }
