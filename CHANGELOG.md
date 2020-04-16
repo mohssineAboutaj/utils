@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 16-apr-2020 02:10 v1.1.16
++ separate removeDuplicates to [removeDuplicated](./src/remove-deplicates.js) & [removeTwins](./src/remove-twins.js)
++ add [removeFromArray](./src/remove-from-array.js)
+
 ## 1-apr-2020 14:51 v1.0.1
 + add [merge](./src/merge.js)
 + build test for it
