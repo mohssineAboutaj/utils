@@ -7,12 +7,16 @@
  * 
  * @returns New Array without duplicates element
  */
-function removeDuplicated(array, toRemove) {
-	let newArray;
-	toRemove.forEach((subEl) => {
-		array = array.filter(el => el !== subEl)
+function removeDuplicated(array) {
+	let newArray = [];
+
+	array.forEach((el) => {
+		if (! newArray.includes(el)) {
+			newArray.push(el)
+		}
 	})
-	return newArray = array
+
+	return newArray
 }
 
 module.exports = removeDuplicated

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: merge.js</title>
+    <title>JSDoc: Source: remove-twins.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: merge.js</h1>
+    <h1 class="page-title">Source: remove-twins.js</h1>
 
     
 
@@ -27,21 +27,33 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @function merge a function to merge a groups of values in one array
+ * @function removeTwins 
+ * @description A simple function to remove the element &amp; it twins elements between two arrays
  * 
- * @param  {...any} args any data type to merge in one array
+ * @param {Array} array The original array
+ * @param {Array} toRemove the Array of elements to remove
  * 
- * @returns Array of merged elements
+ * @returns New Array without duplicates element
  */
-function merge(...args) {
-	let result = []
-	for (el of args) {
-		result = result.concat(el)
+function removeTwins(array, toRemove = []) {
+	let newArray = [];
+
+	if (toRemove.length === 0) {
+		array.forEach((el) => {
+			if (! newArray.includes(el)) {
+				newArray.push(el)
+			}
+		})
+		return newArray
+	} else {
+		toRemove.forEach((subEl) => {
+			array = array.filter(el => el !== subEl)
+		})
+		return newArray = array
 	}
-	return result
 }
 
-module.exports = merge</code></pre>
+module.exports = removeTwins</code></pre>
         </article>
     </section>
 
