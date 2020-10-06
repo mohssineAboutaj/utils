@@ -28,7 +28,4 @@
 	"bugs": {
 		"url": "https://github.com/mohssineAboutaj/utils/issues"
 	},
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
-	}
 }
