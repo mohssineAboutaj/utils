@@ -13,11 +13,11 @@ a project contain simple javaScript functions to do something like merge arrays,
 
 ## Install
 ```sh
-npm install --save @mohssineAboutaj/utils
+npm install @mohssineAboutaj/utils
 ```
 or
 ```sh
-yarn add --save @mohssineAboutaj/utils
+yarn add @mohssineAboutaj/utils
 ```
 
 ## Usage
