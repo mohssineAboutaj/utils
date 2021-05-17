@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: merge.js</title>
+    <title>JSDoc: Source: toggle.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: merge.js</h1>
+    <h1 class="page-title">Source: toggle.js</h1>
 
     
 
@@ -27,21 +27,26 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @function merge a function to merge a groups of values in one array
+ * @function toggleArrayValue function to add or remove a value from an array
  *
- * @param  {...any} args any data type to merge in one array
+ * @param {Array} arr array to check value exists &amp; make toggle
+ * @param {String|Number} val value to make toggle
  *
- * @returns Array of merged elements
+ * @returns {Array} new array after toggling
  */
-function merge(...args) {
-  let result = [];
-  for (el of args) {
-    result = result.concat(el);
+function toggleArrayValue(arr, val) {
+  const index = arr.indexOf(val);
+
+  if (index === -1) {
+    arr.push(val);
+  } else {
+    arr.splice(index, 1);
   }
-  return result;
+
+  return arr;
 }
 
-module.exports = { merge };
+module.exports = { toggleArrayValue };
 </code></pre>
         </article>
     </section>
