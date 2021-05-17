@@ -1,14 +1,15 @@
-const removeDeplicated = require('./src/remove-deplicates')
-
-const merge = require('./src/merge')
-
-const removeFromArray = require('./src/remove-from-array')
-
-const removeTwins = require('./src/remove-twins')
+const {
+  removeTwins,
+  removeFromArray,
+  removeDeplicates,
+} = require("./src/remove");
+const { merge } = require("./src/merge");
+const { toggleArrayValue } = require("./src/toggle");
 
 module.exports = {
-	removeDeplicated,
-	removeTwins,
-	merge,
-	removeFromArray,
-}
+  removeTwins,
+  removeDeplicates,
+  merge,
+  removeFromArray,
+  toggleArrayValue,
+};

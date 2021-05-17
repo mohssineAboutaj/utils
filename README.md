@@ -1,17 +1,15 @@
 <h1>Utils</h1>
 
-## Table Of Content
-
-- [Table Of Content](#table-of-content)
 - [About](#about)
 - [Features & Functions](#features--functions)
 - [Documentation](#documentation)
 - [Install](#install)
 - [Usage](#usage)
-	- [Usage of _removeDeplicated()_](#usage-of-removedeplicated)
-	- [Usage of _removeTwins()_](#usage-of-removetwins)
-	- [Usage of _merge()_](#usage-of-merge)
-	- [Usage of _removeFromArray()_](#usage-of-removefromarray)
+  - [Usage of _removeDeplicates()_](#usage-of-removedeplicates)
+  - [Usage of _removeTwins()_](#usage-of-removetwins)
+  - [Usage of _merge()_](#usage-of-merge)
+  - [Usage of _removeFromArray()_](#usage-of-removefromarray)
+  - [Usage of _toggleArrayValue()_](#usage-of-togglearrayvalue)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -21,10 +19,11 @@ a project contain simple javaScript functions to do something like merge arrays,
 
 ## Features & Functions
 
-- removeDeplicated
+- removeDeplicates
 - merge
 - removeTwins
 - removeFromArray
+- toggleArrayValue
 
 ## Documentation
 
@@ -44,15 +43,15 @@ yarn add @mohssineAboutaj/utils
 
 ## Usage
 
-### Usage of _removeDeplicated()_
+### Usage of _removeDeplicates()_
 
 ```js
-const { removeDeplicated } = require("@mohssineAboutaj/utils");
+const { removeDeplicates } = require("@mohssineAboutaj/utils");
 
 let origin = [1, 2, 3, 4, 5, 6];
 let removes = [1, 3, 2, 6];
 
-let arr = removeDeplicated(origin, removes);
+let arr = removeDeplicates(origin, removes);
 
 console.log(arr); // output is [4,5]
 ```
@@ -91,6 +90,19 @@ let removes = 2; // not required
 let arr = removeFromArray(origin, removes);
 
 console.log(arr); // output is [1,3,4,5,6]
+```
+
+### Usage of _toggleArrayValue()_
+
+```js
+const { toggleArrayValue } = require("@mohssineAboutaj/utils");
+
+let origin = ["a", "b", "c"];
+let value = 2; // not required
+
+let arr = toggleArrayValue(origin, value);
+
+console.log(arr); // output is ['a','b','c',2]
 ```
 
 ## Changelog

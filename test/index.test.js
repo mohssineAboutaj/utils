@@ -1,86 +1,115 @@
 const {
-	removeDeplicated,
-	merge,
-	removeFromArray,
-	removeTwins,
-} = require('../index')
+  removeDeplicates,
+  merge,
+  removeFromArray,
+  removeTwins,
+  toggleArrayValue,
+} = require("../index");
 
-// removeDeplicated() testing
-test("should removeDeplicated defined", () => {
-	expect(removeDeplicated).toBeDefined()
-})
+const allImports = [
+  removeDeplicates,
+  merge,
+  removeFromArray,
+  removeTwins,
+  toggleArrayValue,
+];
 
-test("should removeDeplicated is a function", () => {
-	expect(typeof removeDeplicated).toBe('function')
-})
+describe("All is defined", () => {
+  allImports.forEach((fn) => {
+    test(`should defined`, () => {
+      expect(fn).toBeDefined();
+    });
+  });
+});
 
-test("should removeDeplicated() return an array", () => {
-	let arr = [1,1,2,3,3,4,4,6,5]
+describe("All is a function", () => {
+  allImports.forEach((fn) => {
+    test("should is a function", () => {
+      expect(typeof fn).toBe("function");
+    });
+  });
+});
 
-	expect(Array.isArray(removeDeplicated(arr))).toBeTruthy()
-})
+describe("removeDeplicates", () => {
+  test("should is a function", () => {
+    expect(typeof removeDeplicates).toBe("function");
+  });
 
-test("should removeDeplicated() return exact values", () => {
-	let arr = [1,1,2,3,3,4,4,6,5]
+  test("should return an array", () => {
+    let arr = [1, 1, 2, 3, 3, 4, 4, 6, 5];
 
-	expect(removeDeplicated(arr)).toEqual([ 1, 2, 3, 4, 6, 5 ])
-})
+    expect(Array.isArray(removeDeplicates(arr))).toBeTruthy();
+  });
 
-// removeTwins() testing
-test("should removeTwins defined", () => {
-	expect(removeTwins).toBeDefined()
-})
+  test("should return exact values", () => {
+    let arr = [1, 1, 2, 3, 3, 4, 4, 6, 5];
 
-test("should removeTwins is a function", () => {
-	expect(typeof removeTwins).toBe('function')
-})
+    expect(removeDeplicates(arr)).toEqual([1, 2, 3, 4, 6, 5]);
+  });
+});
 
-test("should removeTwins() return an array", () => {
-	let arr = [1,2,3,4,5,6]
-	let toRemove = [1,2,3]
+describe("removeTwins", () => {
+  test("should is a function", () => {
+    expect(typeof removeTwins).toBe("function");
+  });
 
-	expect(Array.isArray(removeTwins(arr, toRemove))).toBeTruthy()
-})
+  test("should return an array", () => {
+    let arr = [1, 2, 3, 4, 5, 6];
+    let toRemove = [1, 2, 3];
 
-test("should removeTwins() return exact values", () => {
-	let arr = [1,2,3,4,5,6,7,9]
-	let toRemove = [1,2,7,8,3]
+    expect(Array.isArray(removeTwins(arr, toRemove))).toBeTruthy();
+  });
 
-	expect(removeTwins(arr, toRemove)).toEqual([ 4, 5, 6, 9 ])
-})
+  test("should return exact values", () => {
+    let arr = [1, 2, 3, 4, 5, 6, 7, 9];
+    let toRemove = [1, 2, 7, 8, 3];
 
-// merge() testing
-test("should merge defined", () => {
-	expect(merge).toBeDefined()
-})
+    expect(removeTwins(arr, toRemove)).toEqual([4, 5, 6, 9]);
+  });
+});
 
-test("should merge is a function", () => {
-	expect(typeof merge).toBe('function')
-})
+describe("merge", () => {
+  test("should  is a function", () => {
+    expect(typeof merge).toBe("function");
+  });
 
-test("should merge() return an array", () => {
-	expect(merge([1,2,3], [4,5,6], "a", {b: 1}, null, true, undefined, 20)).toEqual([1, 2, 3, 4, 5, 6, 'a', { b: 1 }, null, true, undefined, 20])
-})
+  test("should return an array", () => {
+    expect(
+      merge([1, 2, 3], [4, 5, 6], "a", { b: 1 }, null, true, undefined, 20)
+    ).toEqual([1, 2, 3, 4, 5, 6, "a", { b: 1 }, null, true, undefined, 20]);
+  });
+});
 
-// remove from array testing
-test("should removeDeplicated defined", () => {
-	expect(removeDeplicated).toBeDefined()
-})
+describe("removeFromArray", () => {
+  test("should is a function", () => {
+    expect(typeof removeFromArray).toBe("function");
+  });
 
-test("should removeFromArray is a function", () => {
-	expect(typeof removeFromArray).toBe('function')
-})
+  test("should return an array", () => {
+    let list = ["a", "b", "c", "d"];
+    let toRemove = "a";
 
-test("should removeFromArray() return an array", () => {
-	let list = ["a","b","c","d"]
-	let toRemove = "a"
+    expect(Array.isArray(removeFromArray(list, toRemove))).toBeTruthy();
+  });
 
-	expect(Array.isArray(removeFromArray(list, toRemove))).toBeTruthy()
-})
+  test("should return exact values", () => {
+    let list = ["a", "b", "c", "d"];
+    let toRemove = "a";
 
-test("should removeFromArray() return exact values", () => {
-	let list = ["a","b","c","d"]
-	let toRemove = "a"
+    expect(removeFromArray(list, toRemove)).toEqual(["b", "c", "d"]);
+  });
+});
 
-	expect(removeFromArray(list, toRemove)).toEqual(["b","c","d"])
-})
+describe("toggleArrayValue", () => {
+  test("should is a function", () => {
+    expect(typeof toggleArrayValue).toBe("function");
+  });
+
+  test("should return exact values", () => {
+    let list = ["a", "b", "c", "d"];
+    let val = "g";
+
+    expect(toggleArrayValue(list, val)).toEqual(["a", "b", "c", "d", "g"]);
+    expect(toggleArrayValue(list, val)).toEqual(["a", "b", "c", "d"]);
+  });
+});
