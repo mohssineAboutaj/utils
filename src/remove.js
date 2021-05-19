@@ -8,7 +8,7 @@
  * @returns New Array without duplicates element
  */
 function removeDeplicates(array) {
-  let newArray = [];
+  const newArray = [];
 
   array.forEach((el) => {
     if (!newArray.includes(el)) {
@@ -28,12 +28,14 @@ function removeDeplicates(array) {
  * @returns an Array of elements without removed value
  */
 function removeFromArray(list, toRemove) {
-  let result = [];
+  const result = [];
+
   list.filter((el) => {
     if (el !== toRemove) {
       result.push(el);
     }
   });
+
   return result;
 }
 
@@ -55,13 +57,14 @@ function removeTwins(array, toRemove = []) {
         newArray.push(el);
       }
     });
-    return newArray;
   } else {
     toRemove.forEach((subEl) => {
       array = array.filter((el) => el !== subEl);
     });
-    return (newArray = array);
+    newArray = array;
   }
+
+  return newArray;
 }
 
 module.exports = { removeTwins, removeFromArray, removeDeplicates };

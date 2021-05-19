@@ -5,6 +5,7 @@
 - add _toggleArrayValue_
 - combine similar functions into one file
 - add [prettier](https://prettier.io/) for code formating
+- grouping tests
 
 ## 6-oct-2020 18:28 v1.2.13
 

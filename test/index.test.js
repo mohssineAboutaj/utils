@@ -36,13 +36,13 @@ describe("removeDeplicates", () => {
   });
 
   test("should return an array", () => {
-    let arr = [1, 1, 2, 3, 3, 4, 4, 6, 5];
+    const arr = [1, 1, 2, 3, 3, 4, 4, 6, 5];
 
     expect(Array.isArray(removeDeplicates(arr))).toBeTruthy();
   });
 
   test("should return exact values", () => {
-    let arr = [1, 1, 2, 3, 3, 4, 4, 6, 5];
+    const arr = [1, 1, 2, 3, 3, 4, 4, 6, 5];
 
     expect(removeDeplicates(arr)).toEqual([1, 2, 3, 4, 6, 5]);
   });
@@ -54,15 +54,15 @@ describe("removeTwins", () => {
   });
 
   test("should return an array", () => {
-    let arr = [1, 2, 3, 4, 5, 6];
-    let toRemove = [1, 2, 3];
+    const arr = [1, 2, 3, 4, 5, 6];
+    const toRemove = [1, 2, 3];
 
     expect(Array.isArray(removeTwins(arr, toRemove))).toBeTruthy();
   });
 
   test("should return exact values", () => {
-    let arr = [1, 2, 3, 4, 5, 6, 7, 9];
-    let toRemove = [1, 2, 7, 8, 3];
+    const arr = [1, 2, 3, 4, 5, 6, 7, 9];
+    const toRemove = [1, 2, 7, 8, 3];
 
     expect(removeTwins(arr, toRemove)).toEqual([4, 5, 6, 9]);
   });
@@ -86,15 +86,15 @@ describe("removeFromArray", () => {
   });
 
   test("should return an array", () => {
-    let list = ["a", "b", "c", "d"];
-    let toRemove = "a";
+    const list = ["a", "b", "c", "d"];
+    const toRemove = "a";
 
     expect(Array.isArray(removeFromArray(list, toRemove))).toBeTruthy();
   });
 
   test("should return exact values", () => {
-    let list = ["a", "b", "c", "d"];
-    let toRemove = "a";
+    const list = ["a", "b", "c", "d"];
+    const toRemove = "a";
 
     expect(removeFromArray(list, toRemove)).toEqual(["b", "c", "d"]);
   });
@@ -106,8 +106,8 @@ describe("toggleArrayValue", () => {
   });
 
   test("should return exact values", () => {
-    let list = ["a", "b", "c", "d"];
-    let val = "g";
+    const list = ["a", "b", "c", "d"];
+    const val = "g";
 
     expect(toggleArrayValue(list, val)).toEqual(["a", "b", "c", "d", "g"]);
     expect(toggleArrayValue(list, val)).toEqual(["a", "b", "c", "d"]);
